@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "projects": {
+    "mab-sandbox": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/mab-sandbox",
+      "sourceRoot": "apps/mab-sandbox/src",
+      "prefix": "mat-abstractions",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mab-sandbox",
+            "index": "apps/mab-sandbox/src/index.html",
+            "main": "apps/mab-sandbox/src/main.ts",
+            "polyfills": "apps/mab-sandbox/src/polyfills.ts",
+            "tsConfig": "apps/mab-sandbox/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/mab-sandbox/src/favicon.ico",
+              "apps/mab-sandbox/src/assets"
+            ],
+            "styles": ["apps/mab-sandbox/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mab-sandbox/src/environments/environment.ts",
+                  "with": "apps/mab-sandbox/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mab-sandbox:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mab-sandbox:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mab-sandbox:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mab-sandbox/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mab-sandbox/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "mab-sandbox-e2e": {
+      "root": "apps/mab-sandbox-e2e",
+      "sourceRoot": "apps/mab-sandbox-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mab-sandbox-e2e/cypress.json",
+            "tsConfig": "apps/mab-sandbox-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mab-sandbox:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mab-sandbox:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mab-sandbox-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "mab-sandbox"
+}
