@@ -1,5 +1,7 @@
 <mab-dashboard-card>
-  <mat-icon card-action>drag_indicator</mat-icon>
+  <section card-action>
+    <ng-content select="[cdkDragHandle]"></ng-content>
+  </section>
   <section card-title>
     {{ title }}
   </section>

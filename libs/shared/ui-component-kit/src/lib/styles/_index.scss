@@ -1,1 +1,4 @@
-@use './dashboard-card'
+@use 'global-mat-overrides';
+
+@use './dashboard-card';
+@use './favorite-card';

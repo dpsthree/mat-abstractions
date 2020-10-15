@@ -16,7 +16,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/ui-component-kit/src/lib"]
+              "includePaths": ["libs/shared/ui-component-kit/src/lib", "libs/shared/ui-mat-deps/src/lib"]
             },
             "outputPath": "dist/apps/mab-sandbox",
             "index": "apps/mab-sandbox/src/index.html",
