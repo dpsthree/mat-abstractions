@@ -1,0 +1,15 @@
+<mab-dashboard-card>
+  <mat-icon card-action>drag_indicator</mat-icon>
+  <section card-title>
+    {{ title }}
+  </section>
+  <section card-subtitle>
+    {{ description }}
+  </section>
+  <button post-title mat-flat-button (click)="action.emit()">
+    <h2>{{ actionLabel }}</h2>
+  </button>
+  <section card-content>
+    <ng-content></ng-content>
+  </section>
+</mab-dashboard-card>
