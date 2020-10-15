@@ -15,6 +15,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/ui-component-kit/src/lib"]
+            },
             "outputPath": "dist/apps/mab-sandbox",
             "index": "apps/mab-sandbox/src/index.html",
             "main": "apps/mab-sandbox/src/main.ts",
@@ -200,6 +203,7 @@
       }
     }
   },
+
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
