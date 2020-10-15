@@ -9,7 +9,10 @@
     {{ description }}
   </section>
   <button post-title mat-flat-button (click)="action.emit()">
-    <h2>{{ actionLabel }}</h2>
+    <h2>
+      <mat-icon *ngIf="actionLabel === 'Edit'">edit</mat-icon>
+      {{ actionLabel }}
+    </h2>
   </button>
   <section card-content>
     <ng-content></ng-content>
