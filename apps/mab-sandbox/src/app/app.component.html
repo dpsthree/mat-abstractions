@@ -21,11 +21,13 @@
   </mat-sidenav>
   <mat-sidenav
     #sidepin
-    mode="side"
+    [mode]="sidepinMode"
     position="end"
-    opened
   >
-    Side pinned content here
+    <section class="sidenav-content">
+      <p>Side pinned content here</p>
+      <button (click)="toggleSidepinMode()" mat-icon-button><mat-icon>push_pin</mat-icon></button>
+    </section>
   </mat-sidenav>
 
   <mat-sidenav-content>

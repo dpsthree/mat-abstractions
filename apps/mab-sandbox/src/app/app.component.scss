@@ -5,3 +5,13 @@ mab-favorite-card {
 .spacer {
   flex: 1 1 auto;
 }
+
+.sidenav-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
