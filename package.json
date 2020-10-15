@@ -30,13 +30,16 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^10.1.0",
+    "@angular/cdk": "^10.2.4",
     "@angular/common": "^10.1.0",
     "@angular/compiler": "^10.1.0",
     "@angular/core": "^10.1.0",
     "@angular/forms": "^10.1.0",
+    "@angular/material": "^10.2.4",
     "@angular/platform-browser": "^10.1.0",
     "@angular/platform-browser-dynamic": "^10.1.0",
     "@angular/router": "^10.1.0",
+    "@grapecity/wijmo.all": "^5.20202.699",
     "@nrwl/angular": "10.3.0",
     "rxjs": "~6.5.5",
     "zone.js": "^0.10.2"

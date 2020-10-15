@@ -1,0 +1,20 @@
+<mat-card class="mat-elevation-z3" >
+  <mat-card-header>
+    <div mat-card-avatar>
+      <ng-content select="[card-action]"></ng-content>
+    </div>
+    <mat-card-title>
+      <ng-content select="[card-title]"></ng-content>
+    </mat-card-title>
+    <div class="dashboard-card-post-title-content">
+      <ng-content select="[post-title]"></ng-content>
+    </div>
+    <mat-card-subtitle>
+      <ng-content select="[card-subtitle]"></ng-content>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="imgUrl" mat-card-image [src]="imgUrl" [alt]="imgAlt">
+  <mat-card-content>
+    <ng-content select="[card-content]"></ng-content>
+  </mat-card-content>
+</mat-card>

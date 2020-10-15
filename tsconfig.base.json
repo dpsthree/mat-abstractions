@@ -15,7 +15,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mat-abstractions/shared/ui-mat-deps": [
+        "libs/shared/ui-mat-deps/src/index.ts"
+      ],
+      "@mat-abstractions/shared/ui-component-kit": [
+        "libs/shared/ui-component-kit/src/index.ts"
+      ],
+      "@mat-abstractions/shared/ui-wijmo-deps": [
+        "libs/shared/ui-wijmo-deps/src/index.ts"
+    ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

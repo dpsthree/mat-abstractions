@@ -10,7 +10,7 @@
       },
       "root": "apps/mab-sandbox",
       "sourceRoot": "apps/mab-sandbox/src",
-      "prefix": "mat-abstractions",
+      "prefix": "mab",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,7 +25,11 @@
               "apps/mab-sandbox/src/favicon.ico",
               "apps/mab-sandbox/src/assets"
             ],
-            "styles": ["apps/mab-sandbox/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@grapecity/wijmo.styles/wijmo.css",
+              "apps/mab-sandbox/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -116,6 +120,84 @@
           }
         }
       }
+    },
+    "shared-ui-mat-deps": {
+      "projectType": "library",
+      "root": "libs/shared/ui-mat-deps",
+      "sourceRoot": "libs/shared/ui-mat-deps/src",
+      "prefix": "mab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/ui-mat-deps/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-mat-deps/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-component-kit": {
+      "projectType": "library",
+      "root": "libs/shared/ui-component-kit",
+      "sourceRoot": "libs/shared/ui-component-kit/src",
+      "prefix": "mab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/ui-component-kit/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-component-kit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-wijmo-deps": {
+      "projectType": "library",
+      "root": "libs/shared/ui-wijmo-deps",
+      "sourceRoot": "libs/shared/ui-wijmo-deps/src",
+      "prefix": "mab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/ui-wijmo-deps/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-wijmo-deps/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -138,7 +220,8 @@
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "prefix": "mab"
     }
   },
   "defaultProject": "mab-sandbox"
