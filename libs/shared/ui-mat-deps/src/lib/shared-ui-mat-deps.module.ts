@@ -5,8 +5,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
-const deps = [DragDropModule, MatButtonModule, MatCardModule, MatIconModule];
+const deps = [
+  DragDropModule,
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatSidenavModule,
+];
 
 @NgModule({
   imports: [CommonModule, ...deps],

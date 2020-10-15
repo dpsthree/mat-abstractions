@@ -1,44 +1,77 @@
-<section class="drag-list" cdkDropList>
-  <mab-favorite-card
-    actionLabel="Done"
-    title="Card 1"
-    description="Description for Card 1"
-    cdkDrag
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="example-icon"
+    (click)="sidenav.toggle()"
   >
-    <!--
-    Because of limitations in the target version of NG
-    we cannot abstract the drag mechanics. A later version
-    introduces a service that allows the connection of
-    drag and handle to a list through an imperitive coding
-    approach.
-   -->
-    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
-    <p>
-      Table Content goes here
-    </p>
-  </mab-favorite-card>
-  <mab-favorite-card
-    actionLabel="Edit"
-    title="Card 2"
-    description="Description for Card 2"
-    cdkDrag
-  >
-    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Mat Abstractions</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="sidepin.toggle()">Toggle</button>
 
-    <p>
-      Table Content goes here
-    </p>
-  </mab-favorite-card>
-  <mab-favorite-card
-    actionLabel="Edit"
-    title="Card 3"
-    description="Description for Card 3"
-    cdkDrag
-  >
-    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+</mat-toolbar>
 
-    <p>
-      Table Content goes here
-    </p>
-  </mab-favorite-card>
-</section>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+  >
+    Nav content here
+  </mat-sidenav>
+  <mat-sidenav
+    #sidepin
+    mode="side"
+    position="end"
+    opened
+  >
+    Side pinned content here
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <section class="drag-list" cdkDropList>
+      <mab-favorite-card
+        actionLabel="Done"
+        title="Card 1"
+        description="Description for Card 1"
+        cdkDrag
+      >
+        <!--
+        Because of limitations in the target version of NG
+        we cannot abstract the drag mechanics. A later version
+        introduces a service that allows the connection of
+        drag and handle to a list through an imperitive coding
+        approach.
+       -->
+        <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+        <p>
+          Table Content goes here
+        </p>
+      </mab-favorite-card>
+      <mab-favorite-card
+        actionLabel="Edit"
+        title="Card 2"
+        description="Description for Card 2"
+        cdkDrag
+      >
+        <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+        <p>
+          Table Content goes here
+        </p>
+      </mab-favorite-card>
+      <mab-favorite-card
+        actionLabel="Edit"
+        title="Card 3"
+        description="Description for Card 3"
+        cdkDrag
+      >
+        <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+        <p>
+          Table Content goes here
+        </p>
+      </mab-favorite-card>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>
