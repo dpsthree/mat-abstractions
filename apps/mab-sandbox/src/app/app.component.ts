@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  sidepinMode = 'over';
 
-  toggleSidepinMode() {
-    if (this.sidepinMode === 'over') {
-      this.sidepinMode = 'side';
-    } else {
-      this.sidepinMode = 'over';
-    }
-  }
 }

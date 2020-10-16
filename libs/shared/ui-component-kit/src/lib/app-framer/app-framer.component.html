@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ appName }}</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="sidepin.toggle()">Toggle</button>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side">
+    <ng-content select="[sidenav-content]"></ng-content>
+  </mat-sidenav>
+  <mat-sidenav #sidepin [mode]="sidepinMode" position="end">
+    <section class="sidepin-content">
+      <ng-content select="[sidepin-header]"></ng-content>
+      <button (click)="toggleSidepinMode()" mat-icon-button>
+        <mat-icon>push_pin</mat-icon>
+      </button>
+    </section>
+    <ng-content select="[sidepin-content]"></ng-content>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
