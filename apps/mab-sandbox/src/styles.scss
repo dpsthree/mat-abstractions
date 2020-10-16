@@ -1,5 +1,7 @@
 // From component kit
-@use 'styles/index.scss';
+@use 'kit-styles';
+
+@use './styles/index';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

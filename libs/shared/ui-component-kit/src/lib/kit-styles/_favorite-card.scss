@@ -9,4 +9,8 @@ mab-favorite-card {
       margin-right: 5px;
     }
   }
+
+  div[mat-card-avatar]:empty {
+    display: none;
+  }
 }

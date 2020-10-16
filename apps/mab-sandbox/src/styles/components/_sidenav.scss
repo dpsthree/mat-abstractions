@@ -1,0 +1,6 @@
+mat-sidenav {
+  min-width: 150px;
+  &[position='end'] {
+    min-width: 400px;
+  }
+}

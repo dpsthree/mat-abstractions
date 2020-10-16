@@ -1,6 +1,6 @@
 <mab-dashboard-card>
-  <section card-action>
-    <ng-content select="[cdkDragHandle]"></ng-content>
+  <section card-action ()>
+    <ng-container *ngTemplateOutlet="dragHandle"></ng-container>
   </section>
   <section card-title>
     {{ title }}
@@ -18,3 +18,7 @@
     <ng-content></ng-content>
   </section>
 </mab-dashboard-card>
+
+<ng-template #dragHandle>
+  <ng-content #handleContent select="[cdkDragHandle]"></ng-content>
+</ng-template>

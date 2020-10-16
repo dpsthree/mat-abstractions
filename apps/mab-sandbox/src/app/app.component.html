@@ -6,6 +6,7 @@
   <section sidepin-content>
     Pinnable content goes here
   </section>
+  <h1>Favorites - Cards with drag/drop</h1>
   <section class="drag-list" cdkDropList>
     <mab-favorite-card
       actionLabel="Done"
@@ -50,4 +51,39 @@
       </p>
     </mab-favorite-card>
   </section>
+  <h1>Favorites - Cards without drag/drop</h1>
+  <mab-dashboard-card>
+    <section card-title>
+      Not a favorite card
+    </section>
+    <section card-subtitle>
+      Another card to demonstrate a less abstract card
+    </section>
+    <section post-title class="custom-button-group">
+      <button mat-flat-button>
+        <h2>
+          Custom button set
+        </h2>
+      </button>
+      <button mat-flat-button>
+        <h2>
+          <mat-icon>cached</mat-icon>
+          Refresh
+        </h2>
+      </button>
+    </section>
+    <section card-content>
+      <p>Table content goes here</p>
+    </section>
+  </mab-dashboard-card>
+
+  <mab-favorite-card
+    actionLabel="Edit"
+    title="Card 2"
+    description="Description for Card 2"
+  >
+    <p>
+      Table Content goes here
+    </p>
+  </mab-favorite-card>
 </mab-app-framer>
