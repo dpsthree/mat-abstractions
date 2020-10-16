@@ -1,14 +1,24 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-.sidepin-content {
+mab-app-framer {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
 
-  p {
-    margin: 0;
+  mat-sidenav-container {
+    flex-grow: 1;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .sidepin-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
   }
 }
