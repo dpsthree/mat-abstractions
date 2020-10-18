@@ -2,6 +2,7 @@
 @use 'kit-styles';
 
 @use './styles/index';
+@use 'kit-styles/theme';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
