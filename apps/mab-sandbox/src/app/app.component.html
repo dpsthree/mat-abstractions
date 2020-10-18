@@ -58,7 +58,7 @@
     description="Favorite cards are typically meant to be part of a drag list"
     cdkDrag
   >
-  <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
 
     <p>
       Table Content goes here
@@ -91,7 +91,7 @@
       <p>Table content goes here</p>
     </section>
   </mab-dashboard-card>
-  <mat-card class="mat-elevation-z3 simple-card" >
+  <mat-card class="mat-elevation-z3 simple-card">
     <mat-card-header>
       <mat-card-title>
         Just a normal mat card
@@ -113,9 +113,7 @@
       cdkDrag
     >
       <mat-icon cdkDragHandle>drag_indicator</mat-icon>
-      <p>
-        Table Content goes here
-      </p>
+      <wj-flex-grid [itemsSource]="tabularContent"> </wj-flex-grid>
     </mab-favorite-card>
     <mab-favorite-card
       actionLabel="Done"
@@ -125,9 +123,27 @@
     >
       <mat-icon cdkDragHandle>drag_indicator</mat-icon>
 
-      <p>
-        Table Content goes here
-      </p>
+      <table mat-table [dataSource]="tabularContent">
+        <ng-container matColumnDef="id">
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="firstName">
+          <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+          <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+        <ng-container matColumnDef="hoursWorked">
+          <td mat-cell *matCellDef="let element">{{ element.hoursWorked }}</td>
+        </ng-container>
+        <ng-container matColumnDef="hourlyWage">
+          <td mat-cell *matCellDef="let element">{{ element.hourlyWage }}</td>
+        </ng-container>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
     </mab-favorite-card>
   </section>
 </mab-app-framer>
