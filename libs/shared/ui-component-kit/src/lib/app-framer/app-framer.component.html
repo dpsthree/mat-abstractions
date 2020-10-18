@@ -1,10 +1,14 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()">
+<div [class.custom-theme]="customTheme">
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>{{ appName }}</span>
   <span class="spacer"></span>
-  <button mat-button (click)="sidepin.toggle()">Toggle</button>
+  <button mat-button (click)="sidepin.toggle()">Toggle Sidepin</button>
+  <button mat-button (click)="customTheme = !customTheme">Toggle Theme</button>
+
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -25,3 +29,4 @@
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>

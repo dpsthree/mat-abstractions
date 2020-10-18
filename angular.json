@@ -30,7 +30,8 @@
             ],
             "styles": [
               "./node_modules/@grapecity/wijmo.styles/wijmo.css",
-              "apps/mab-sandbox/src/styles.scss"
+              "apps/mab-sandbox/src/styles.scss",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
             ],
             "scripts": []
           },

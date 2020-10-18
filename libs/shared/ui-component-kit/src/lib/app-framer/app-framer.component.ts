@@ -9,6 +9,7 @@ export class AppFramerComponent {
   @Input('appName') appName = '';
 
   sidepinMode = 'over';
+  customTheme = true;
 
   toggleSidepinMode() {
     if (this.sidepinMode === 'over') {

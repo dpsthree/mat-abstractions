@@ -49,5 +49,6 @@ $theme: mat-light-theme(
 );
 
 
-
-@include angular-material-theme($theme);
+.custom-theme {
+  @include angular-material-theme($theme);
+}
