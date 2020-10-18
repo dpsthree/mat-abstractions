@@ -51,8 +51,23 @@
       </p>
     </mab-favorite-card>
   </section>
-  <h1>Favorites - Cards without drag/drop</h1>
-  <mab-dashboard-card>
+  <h1>Misc. Cards without drag/drop</h1>
+  <mab-favorite-card
+    actionLabel="Generic Action"
+    title="My Favorite card without drag list"
+    description="Favorite cards are typically meant to be part of a drag list"
+    cdkDrag
+  >
+  <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+    <p>
+      Table Content goes here
+    </p>
+  </mab-favorite-card>
+  <mab-dashboard-card class="dashboard-card">
+    <section card-action>
+      <mat-icon>info</mat-icon>
+    </section>
     <section card-title>
       Not a favorite card
     </section>
@@ -76,14 +91,43 @@
       <p>Table content goes here</p>
     </section>
   </mab-dashboard-card>
+  <mat-card class="mat-elevation-z3 simple-card" >
+    <mat-card-header>
+      <mat-card-title>
+        Just a normal mat card
+      </mat-card-title>
+      <mat-card-subtitle>
+        Basic card subtitle
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      Mat card content
+    </mat-card-content>
+  </mat-card>
+  <h1>Favorites - Cards with tables and grids</h1>
+  <section class="drag-list" cdkDropList>
+    <mab-favorite-card
+      actionLabel="Done"
+      title="Wijmo Demo"
+      description="Datagrid is not a great fit for static data"
+      cdkDrag
+    >
+      <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+      <p>
+        Table Content goes here
+      </p>
+    </mab-favorite-card>
+    <mab-favorite-card
+      actionLabel="Done"
+      title="Mat Table"
+      description="Tables are for tabular data"
+      cdkDrag
+    >
+      <mat-icon cdkDragHandle>drag_indicator</mat-icon>
 
-  <mab-favorite-card
-    actionLabel="Edit"
-    title="Card 2"
-    description="Description for Card 2"
-  >
-    <p>
-      Table Content goes here
-    </p>
-  </mab-favorite-card>
+      <p>
+        Table Content goes here
+      </p>
+    </mab-favorite-card>
+  </section>
 </mab-app-framer>
