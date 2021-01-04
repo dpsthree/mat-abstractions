@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 
 const deps = [
   DragDropModule,
@@ -17,6 +18,7 @@ const deps = [
   MatToolbarModule,
   MatSidenavModule,
   MatTableModule,
+  MatListModule,
 ];
 
 @NgModule({
