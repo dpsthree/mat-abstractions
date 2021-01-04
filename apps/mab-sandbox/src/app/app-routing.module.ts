@@ -10,6 +10,13 @@ const routes: Routes = [
         (m) => m.CardDemosFeatureModule
       ),
   },
+  {
+    path: 'layouts',
+    loadChildren: () =>
+      import('@mat-abstractions/layout-demos/feature').then(
+        (m) => m.LayoutDemosFeatureModule
+      ),
+  },
 ];
 
 @NgModule({

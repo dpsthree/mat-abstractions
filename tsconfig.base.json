@@ -27,6 +27,9 @@
       ],
       "@mat-abstractions/card-demos/feature": [
         "libs/card-demos/feature/src/index.ts"
+      ],
+      "@mat-abstractions/layout-demos/feature": [
+        "libs/layout-demos/feature/src/index.ts"
       ]
     }
   },

@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/shared/ui-component-kit',
     '<rootDir>/libs/shared/ui-wijmo-deps',
     '<rootDir>/libs/card-demos/feature',
+    '<rootDir>/libs/layout-demos/feature',
   ],
 };

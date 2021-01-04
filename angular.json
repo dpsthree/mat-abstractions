@@ -230,6 +230,32 @@
           "style": "scss"
         }
       }
+    },
+    "layout-demos-feature": {
+      "projectType": "library",
+      "root": "libs/layout-demos/feature",
+      "sourceRoot": "libs/layout-demos/feature/src",
+      "prefix": "mab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/layout-demos/feature/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/layout-demos/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
