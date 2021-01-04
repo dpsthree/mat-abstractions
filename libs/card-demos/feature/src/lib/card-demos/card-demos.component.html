@@ -1,0 +1,140 @@
+<h1>Favorites - Cards with drag/drop</h1>
+<section class="drag-list" cdkDropList>
+  <mab-favorite-card
+    actionLabel="Done"
+    title="Card 1"
+    description="Description for Card 1"
+    cdkDrag
+  >
+    <!--
+        Because of limitations in the target version of NG
+        we cannot abstract the drag mechanics. A later version
+        introduces a service that allows the connection of
+        drag and handle to a list through an imperitive coding
+        approach.
+      -->
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+    <p>
+      Table Content goes here
+    </p>
+  </mab-favorite-card>
+  <mab-favorite-card
+    actionLabel="Edit"
+    title="Card 2"
+    description="Description for Card 2"
+    cdkDrag
+  >
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+    <p>
+      Table Content goes here
+    </p>
+  </mab-favorite-card>
+  <mab-favorite-card
+    actionLabel="Edit"
+    title="Card 3"
+    description="Description for Card 3"
+    cdkDrag
+  >
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+    <p>
+      Table Content goes here
+    </p>
+  </mab-favorite-card>
+</section>
+<h1>Misc. Cards without drag/drop</h1>
+<mab-favorite-card
+  actionLabel="Generic Action"
+  title="My Favorite card without drag list"
+  description="Favorite cards are typically meant to be part of a drag list"
+  cdkDrag
+>
+  <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+  <p>
+    Table Content goes here
+  </p>
+</mab-favorite-card>
+<mab-dashboard-card class="dashboard-card">
+  <section card-action>
+    <mat-icon>info</mat-icon>
+  </section>
+  <section card-title>
+    Not a favorite card
+  </section>
+  <section card-subtitle>
+    Another card to demonstrate a less abstract card
+  </section>
+  <section post-title class="custom-button-group">
+    <button mat-flat-button>
+      <h2>
+        Custom button set
+      </h2>
+    </button>
+    <button mat-flat-button>
+      <h2>
+        <mat-icon>cached</mat-icon>
+        Refresh
+      </h2>
+    </button>
+  </section>
+  <section card-content>
+    <p>Table content goes here</p>
+  </section>
+</mab-dashboard-card>
+<mat-card class="mat-elevation-z3 simple-card">
+  <mat-card-header>
+    <mat-card-title>
+      Just a normal mat card
+    </mat-card-title>
+    <mat-card-subtitle>
+      Basic card subtitle
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    Mat card content
+  </mat-card-content>
+</mat-card>
+<h1>Favorites - Cards with tables and grids</h1>
+<section class="drag-list" cdkDropList>
+  <mab-favorite-card
+    actionLabel="Done"
+    title="Wijmo Demo"
+    description="Datagrid is not a great fit for static data"
+    cdkDrag
+  >
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+    <wj-flex-grid [itemsSource]="tabularContent"> </wj-flex-grid>
+  </mab-favorite-card>
+  <mab-favorite-card
+    actionLabel="Done"
+    title="Mat Table"
+    description="Tables are for tabular data"
+    cdkDrag
+  >
+    <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+
+    <table mat-table [dataSource]="tabularContent">
+      <ng-container matColumnDef="id">
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="firstName">
+        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="lastName">
+        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+      <ng-container matColumnDef="hoursWorked">
+        <td mat-cell *matCellDef="let element">{{ element.hoursWorked }}</td>
+      </ng-container>
+      <ng-container matColumnDef="hourlyWage">
+        <td mat-cell *matCellDef="let element">{{ element.hourlyWage }}</td>
+      </ng-container>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mab-favorite-card>
+</section>

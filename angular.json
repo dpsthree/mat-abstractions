@@ -16,7 +16,10 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/ui-component-kit/src/lib", "libs/shared/ui-mat-deps/src/lib"]
+              "includePaths": [
+                "libs/shared/ui-component-kit/src/lib",
+                "libs/shared/ui-mat-deps/src/lib"
+              ]
             },
             "outputPath": "dist/apps/mab-sandbox",
             "index": "apps/mab-sandbox/src/index.html",
@@ -201,9 +204,34 @@
           "style": "scss"
         }
       }
+    },
+    "card-demos-feature": {
+      "projectType": "library",
+      "root": "libs/card-demos/feature",
+      "sourceRoot": "libs/card-demos/feature/src",
+      "prefix": "mab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/card-demos/feature/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/card-demos/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
-
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },

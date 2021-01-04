@@ -24,7 +24,10 @@
       ],
       "@mat-abstractions/shared/ui-wijmo-deps": [
         "libs/shared/ui-wijmo-deps/src/index.ts"
-    ]
+      ],
+      "@mat-abstractions/card-demos/feature": [
+        "libs/card-demos/feature/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

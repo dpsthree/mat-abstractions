@@ -41,6 +41,9 @@
     },
     "shared-ui-wijmo-deps": {
       "tags": []
+    },
+    "card-demos-feature": {
+      "tags": []
     }
   }
 }
