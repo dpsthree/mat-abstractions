@@ -6,7 +6,8 @@ import { DashboardCardComponent } from './dashboard-card/dashboard-card.componen
 import { FavoriteCardComponent } from './favorite-card/favorite-card.component';
 import { AppFramerComponent } from './app-framer/app-framer.component';
 import { FeatureLayoutComponent } from './feature-layout/feature-layout.component';
-import { NAcrossContainerComponent } from './n-across-container/n-across-container.component';
+import { AutoGridComponent } from './auto-grid/auto-grid.component';
+
 
 @NgModule({
   imports: [CommonModule, SharedUiMatDepsModule],
@@ -15,14 +16,14 @@ import { NAcrossContainerComponent } from './n-across-container/n-across-contain
     FavoriteCardComponent,
     AppFramerComponent,
     FeatureLayoutComponent,
-    NAcrossContainerComponent,
+    AutoGridComponent,
   ],
   exports: [
     DashboardCardComponent,
     FavoriteCardComponent,
     AppFramerComponent,
     FeatureLayoutComponent,
-    NAcrossContainerComponent,
+    AutoGridComponent,
   ],
 })
 export class SharedUiComponentKitModule {}

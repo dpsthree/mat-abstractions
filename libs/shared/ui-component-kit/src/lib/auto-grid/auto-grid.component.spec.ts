@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NAcrossContainerComponent } from './n-across-container.component';
+import { AutoGridComponent } from './auto-grid.component';
 
-describe('NAcrossContainerComponent', () => {
-  let component: NAcrossContainerComponent;
-  let fixture: ComponentFixture<NAcrossContainerComponent>;
+describe('AutoGridComponent', () => {
+  let component: AutoGridComponent;
+  let fixture: ComponentFixture<AutoGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NAcrossContainerComponent ]
+      declarations: [ AutoGridComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NAcrossContainerComponent);
+    fixture = TestBed.createComponent(AutoGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
