@@ -1,14 +1,42 @@
-<h1>
-  Layout component demos
-</h1>
-<div class="framer-window">
-  <mab-app-framer appName="Demo App Title">
-    <section sidenav-content>
-      <div>Navigation content goes here</div>
-    </section>
-    <section sidepin-content>
-      Pinnable content goes here
-    </section>
-    <div>Application content goes here. Typically a router outlet</div>
-  </mab-app-framer>
-</div>
+<mab-feature-layout title="Layout component demos">
+  <h2>Reusable app layout component</h2>
+  <div class="framer-window">
+    <mab-app-framer appName="Demo App Title">
+      <section sidenav-content>
+        <div>Navigation content goes here</div>
+      </section>
+      <section sidepin-content>Pinnable content goes here</section>
+      <div>Application content goes here. Typically a router outlet</div>
+    </mab-app-framer>
+  </div>
+
+  <h2>Reusable feature layout component (Without App Framer)</h2>
+  <div class="framer-window">
+    <mab-feature-layout title="Demo feature title">
+      <p>
+        Feature content goes here. This is typically used within an application
+        framer
+      </p>
+      <p>
+        This example excludes the app framer to show just the basic featuer
+        layout
+      </p>
+    </mab-feature-layout>
+  </div>
+
+  <h2>Reusable feature layout component (With App Framer)</h2>
+  <div class="framer-window">
+    <mab-app-framer appName="Feature demo with app framer">
+      <mab-feature-layout title="Feature layout starts here">
+        <p>
+          Feature content goes here. This is typically used within an
+          application framer
+        </p>
+        <p>
+          This example includes the app framer to show a more realistic
+          example
+        </p>
+      </mab-feature-layout>
+    </mab-app-framer>
+  </div>
+</mab-feature-layout>
