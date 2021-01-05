@@ -1,0 +1,15 @@
+:root {
+  --grid-min: 20ch;
+  --content-min: 20ch;
+}
+
+::ng-deep .autogrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr));
+  grid-gap: 1.5rem;
+  * {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--content-min), 1fr));
+    grid-gap: 1.5rem;
+  }
+}

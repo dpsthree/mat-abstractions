@@ -2,9 +2,20 @@
   height: 500px;
   width: 800px;
   border: 1px solid gray;
+  &.resize {
+    resize: horizontal;
+    overflow: auto;
+  }
 }
-
 
 h2 {
   margin-top: 20px;
+}
+
+.entry {
+  outline: 1px solid black;
+  p {
+    outline: 1px solid blue;
+    margin: 0;
+  }
 }
