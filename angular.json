@@ -49,7 +49,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -67,7 +66,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -89,7 +89,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/mab-sandbox/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/mab-sandbox/src/**/*.ts",
+              "apps/mab-sandbox/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -97,7 +100,8 @@
           "options": {
             "jestConfig": "apps/mab-sandbox/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/apps/mab-sandbox"]
         }
       }
     },
@@ -136,7 +140,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/ui-mat-deps/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/ui-mat-deps/src/**/*.ts",
+              "libs/shared/ui-mat-deps/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -144,7 +151,8 @@
           "options": {
             "jestConfig": "libs/shared/ui-mat-deps/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/shared/ui-mat-deps"]
         }
       },
       "schematics": {
@@ -162,7 +170,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/ui-component-kit/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/ui-component-kit/src/**/*.ts",
+              "libs/shared/ui-component-kit/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -170,7 +181,8 @@
           "options": {
             "jestConfig": "libs/shared/ui-component-kit/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/shared/ui-component-kit"]
         }
       },
       "schematics": {
@@ -188,7 +200,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/ui-wijmo-deps/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/ui-wijmo-deps/src/**/*.ts",
+              "libs/shared/ui-wijmo-deps/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -196,7 +211,8 @@
           "options": {
             "jestConfig": "libs/shared/ui-wijmo-deps/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/shared/ui-wijmo-deps"]
         }
       },
       "schematics": {
@@ -214,7 +230,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/card-demos/feature/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/card-demos/feature/src/**/*.ts",
+              "libs/card-demos/feature/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -222,7 +241,8 @@
           "options": {
             "jestConfig": "libs/card-demos/feature/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/card-demos/feature"]
         }
       },
       "schematics": {
@@ -240,7 +260,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/layout-demos/feature/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/layout-demos/feature/src/**/*.ts",
+              "libs/layout-demos/feature/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -248,7 +271,8 @@
           "options": {
             "jestConfig": "libs/layout-demos/feature/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/layout-demos/feature"]
         }
       },
       "schematics": {
