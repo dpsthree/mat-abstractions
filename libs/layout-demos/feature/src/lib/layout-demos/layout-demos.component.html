@@ -86,7 +86,26 @@
       </section>
       <section sidepin-content>Pinnable content goes here</section>
       <mab-feature-layout title="Feature layout starts here">
-        <mab-auto-grid [gridColMin]="'30ch'" [contentColMin]="'10ch'">
+        <mab-auto-grid [gridColMin]="'calc(50% - 20px)'" [contentColMin]="'10ch'">
+          <p class="entry">This contains</p>
+          <p class="entry">four segments of text</p>
+          <p class="entry">to demonstrate</p>
+          <div class="entry">
+            <div>an auto grid layout.</div>
+            <div>This tile is particularly large to demonstrate content</div>
+            <div>
+              reflow within an element. So we have several lines of text that
+              allow it to wrap.
+              <p>nested</p>
+              <p>nested</p>
+              <p>nested</p>
+            </div>
+          </div>
+        </mab-auto-grid>
+      </mab-feature-layout>
+
+      <!-- <mab-feature-layout title="Feature layout starts here">
+        <mab-auto-grid [gridColMin]="'49vw'" [contentColMin]="'10ch'">
           <p class="entry">This contains</p>
           <p class="entry">four segments of text</p>
           <p class="entry">to demonstrate</p>
@@ -99,7 +118,7 @@
             </p>
           </div>
         </mab-auto-grid>
-      </mab-feature-layout>
+      </mab-feature-layout> -->
     </mab-app-framer>
   </div>
 </mab-feature-layout>
