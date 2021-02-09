@@ -6,7 +6,7 @@ import { DashboardCardComponent } from './dashboard-card/dashboard-card.componen
 import { FavoriteCardComponent } from './favorite-card/favorite-card.component';
 import { AppFramerComponent } from './app-framer/app-framer.component';
 import { FeatureLayoutComponent } from './feature-layout/feature-layout.component';
-import { AutoGridComponent } from './auto-grid/auto-grid.component';
+import { AutoGridDirective } from './directives/auto-grid.directive';
 
 
 @NgModule({
@@ -16,14 +16,14 @@ import { AutoGridComponent } from './auto-grid/auto-grid.component';
     FavoriteCardComponent,
     AppFramerComponent,
     FeatureLayoutComponent,
-    AutoGridComponent,
+    AutoGridDirective,
   ],
   exports: [
     DashboardCardComponent,
     FavoriteCardComponent,
     AppFramerComponent,
     FeatureLayoutComponent,
-    AutoGridComponent,
+    AutoGridDirective
   ],
 })
 export class SharedUiComponentKitModule {}

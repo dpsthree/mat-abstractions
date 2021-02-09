@@ -14,7 +14,7 @@ h2 {
 
 .entry {
   outline: 1px solid black;
-  div {
+  p, div, span {
     outline: 1px solid blue;
     margin: 0;
   }

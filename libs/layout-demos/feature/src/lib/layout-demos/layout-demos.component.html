@@ -63,11 +63,11 @@
 
   <h2>Auto grid component example</h2>
   <div class="framer-window resize">
-    <mab-auto-grid [gridColMin]="'30ch'" [contentColMin]="'10ch'">
+    <section [mabAutoGrid]="'50px'">
       <p class="entry">This contains</p>
       <p class="entry">four segments of text</p>
       <p class="entry">to demonstrate</p>
-      <div class="entry">
+      <div class="entry" [mabAutoGrid]="'10ch'">
         <p>an auto grid layout.</p>
         <p>This tile is particularly large to demonstrate content</p>
         <p>
@@ -75,10 +75,27 @@
           it to wrap.
         </p>
       </div>
-    </mab-auto-grid>
+    </section>
   </div>
 
-  <h2>All together</h2>
+  <h2>Not just a flexbox</h2>
+  <div class="framer-window resize">
+    <section style="display: flex; flex-wrap: wrap;">
+      <p class="entry">This contains</p>
+      <p class="entry">four segments of text</p>
+      <p class="entry">to demonstrate</p>
+      <div class="entry" style="display: flex; flex-wrap: wrap;">
+        <p>an auto grid layout.</p>
+        <p>This tile is particularly large to demonstrate content</p>
+        <p>
+          reflow within an element. So we have several lines of text that allow
+          it to wrap.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <h2>All together - Using CSS instead of Directive</h2>
   <div class="framer-window resize">
     <mab-app-framer appName="Use of all layout components">
       <section sidenav-content>
@@ -86,22 +103,52 @@
       </section>
       <section sidepin-content>Pinnable content goes here</section>
       <mab-feature-layout title="Feature layout starts here">
-        <mab-auto-grid [gridColMin]="'calc(50% - 20px)'" [contentColMin]="'10ch'">
+        <section class="mab-auto-grid" style="--grid-min: calc(50% - 20px);">
           <p class="entry">This contains</p>
           <p class="entry">four segments of text</p>
           <p class="entry">to demonstrate</p>
-          <div class="entry">
+          <section class="entry mab-auto-grid" style="--grid-min: '10ch';">
             <div>an auto grid layout.</div>
             <div>This tile is particularly large to demonstrate content</div>
             <div>
               reflow within an element. So we have several lines of text that
               allow it to wrap.
-              <p>nested</p>
-              <p>nested</p>
-              <p>nested</p>
+            </div>
+          </section>
+        </section>
+      </mab-feature-layout>
+    </mab-app-framer>
+  </div>
+
+  <h2>Alternative layouts</h2>
+  <div class="framer-window resize">
+    <mab-app-framer appName="Use of all layout components">
+      <section sidenav-content>
+        <div>Navigation content goes here</div>
+      </section>
+      <section sidepin-content>Pinnable content goes here</section>
+      <mab-feature-layout title="Feature layout starts here">
+        <section style="display: flex; flex-direction: column;">
+          <div style="width: 100%; outline: 1px solid black;">Thing</div>
+          <div [mabAutoGrid]>
+            <div class="entry">horizontally</div>
+            <div class="entry">prioritized</div>
+            <div class="entry">layout</div>
+          </div>
+          <div mabAutoGrid [column]="true">
+            <div class="entry">
+              Vertically
+            </div>
+            <div class="entry">
+              <span>
+                prioritized
+              </span>
+              <span>
+                content
+              </span>
             </div>
           </div>
-        </mab-auto-grid>
+        </section>
       </mab-feature-layout>
     </mab-app-framer>
   </div>
